@@ -1,0 +1,21 @@
+{{#each pictures as |picture|}}
+  {{log picture}}
+  <section data-id="{{picture.id}}">
+    <h6>Title:</h6>
+    <h3>
+      {{limit picture.title 15}}
+    </h2>
+     <img src="..." alt="..." class="img-thumbnail">
+
+    <h6>Description:</h6>
+    <p>
+      {{#if picture.author}}
+        {{picture.author}}
+      {{else}}
+        No author provided.
+      {{/if}}
+    </p>
+    <!-- {{> partial}} -->
+  </section>
+
+{{/each}}
