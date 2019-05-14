@@ -8,7 +8,7 @@
 const api = require('./pictures/api')
 const ui = require('./pictures/ui')
 
-// const pictureEvents = require('./pictures/events')
+const pictureEvents = require('./pictures/events')
 const getPictures = function () {
   api.getPictures()
     .then(ui.getPicturesSuccess)
@@ -16,5 +16,5 @@ const getPictures = function () {
 }
 $(() => {
   getPictures()
-  // pictureEvents.addHandlers()
+  pictureEvents.addHandlers()
 })
