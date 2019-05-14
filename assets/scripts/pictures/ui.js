@@ -6,6 +6,10 @@ const getPicturesSuccess = function (data) {
   $('.content').html(getPicturesHtml)
 }
 
+const onCreatePictureFailure = () => {
+  console.log('error on Create picture')
+}
+
 const getPicturesFailure = function () {
   console.log('error on getPictures')
 }
@@ -15,13 +19,29 @@ const onCreatePictureSuccess = (data) => {
   $('.content').html(getPicturesHtml)
 }
 
-const onCreatePictureFailure = () => {
-  console.log('error on Create picture')
+const onChangePictureSuccess = () => {
+  console.log('Change Succeed')
+}
+
+const onChangePictureFailure = () => {
+  console.log('Change Failed')
+}
+
+const onDeletePictureSuccess = (data) => {
+  console.log('Delete Succeed')
+}
+
+const onDeletePictureFailure = () => {
+  console.log('Delete Failed')
 }
 
 module.exports = {
   getPicturesSuccess,
   getPicturesFailure,
   onCreatePictureSuccess,
-  onCreatePictureFailure
+  onCreatePictureFailure,
+  onChangePictureSuccess,
+  onChangePictureFailure,
+  onDeletePictureSuccess,
+  onDeletePictureFailure
 }
