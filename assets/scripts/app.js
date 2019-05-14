@@ -5,7 +5,16 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
+const api = require('./pictures/api')
+const ui = require('./pictures/ui')
 
+// const pictureEvents = require('./pictures/events')
+const getPictures = function () {
+  api.getPictures()
+    .then(ui.getPicturesSuccess)
+    .catch(ui.getPicturesFailure)
+}
 $(() => {
-  // your JS code goes here
+  getPictures()
+  // pictureEvents.addHandlers()
 })

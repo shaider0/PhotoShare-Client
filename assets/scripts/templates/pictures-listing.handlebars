@@ -1,0 +1,7 @@
+{{#each pictures as |picture|}}
+  <section data-id="{{picture.id}}">
+    <h3>{{picture.title}}</h3>
+    <h3>{{picture.description}}</h3>
+    <img src="{{picture.url}}" alt="picture" class="img-thumbnail">
+  </section>
+{{/each}}
