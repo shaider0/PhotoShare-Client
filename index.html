@@ -16,8 +16,8 @@
       <nav>
         <span>PicBucket</span>
         <a data-toggle="modal" data-target="#signUpModal"  href="#">Sign-up</a>
-        <a data-toggle="modal" data-target="#exampleModal" href="#">Sign-in</a>
-        <a data-toggle="modal" data-target="#exampleModal" href="#">Change Password</a>
+        <a data-toggle="modal" data-target="#signInModal" href="#">Sign-in</a>
+        <a data-toggle="modal" data-target="#changePasswordModal" href="#">Change Password</a>
         <a href="#">My Pictures</a>
         <a href="#">All Pictures</a>
       </nav>
@@ -35,7 +35,7 @@
        <div class="modal-dialog" role="document">
          <div class="modal-content">
            <div class="modal-header">
-             <h5 class="modal-title" id="exampleModalLabel">Sign up</h5>
+             <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                <span aria-hidden="true">&times;</span>
              </button>
@@ -45,7 +45,49 @@
                <div> <input required type="email" name="credentials[email]" placeholder="Email"></div>
                <input required type="password" name="credentials[password]" placeholder="Password">
                <input required type="password" name="credentials[password_confirmation]" placeholder="Password confirmation">
-               <button type="submit" class="btn btn-secondary">Sign up</button>
+               <button type="submit" class="btn btn-secondary">Sign Up</button>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <!-- Sign in modal -->
+     <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div class="modal-body">
+             <form id="sign-in">
+               <div> <input required type="email" name="credentials[email]" placeholder="Email"></div>
+               <input required type="password" name="credentials[password]" placeholder="Password">
+               <button type="submit" class="btn btn-secondary">Sign In</button>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <!-- Change Password modal -->
+     <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div class="modal-body">
+             <form id="change-password">
+               <input type="password" name="passwords[old]"placeholder="old password">
+               <input type="password" name="passwords[new]"placeholder="new password">
+               <button type="submit" class="btn btn-secondary">Change Password</button>
              </form>
            </div>
          </div>
