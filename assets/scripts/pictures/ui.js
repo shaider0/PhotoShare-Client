@@ -40,8 +40,10 @@ const getPicturesFailure = function () {
 }
 
 const onCreatePictureSuccess = (data) => {
+    $('form').trigger('reset')
   console.log('create Pic Success')
-  $(add'#createModal').modal('toggle')
+
+  $(addgit '#createModal').modal('toggle')
   const getPicturesHtml = getPicturesTemplate({ pictures: data.pictures })
   $('.content').html(getPicturesHtml)
 
@@ -49,6 +51,7 @@ const onCreatePictureSuccess = (data) => {
 }
 
 const onChangePictureSuccess = () => {
+    $('form').trigger('reset')
   $('.content', '#change-picture-modal').modal('toggle')
   $('.modal-backdrop').remove()
   console.log('Change Succeed')
