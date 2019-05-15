@@ -11,6 +11,14 @@ const getPictures = function () {
     .catch(ui.getPicturesFailure)
 }
 
+const getMyPics = function () {
+  console.log('getMypics Called')
+  // api.getMyPictures(id)
+    api.getPictures()
+    .then(ui.getMyPicturesSuccess)
+    .catch(ui.getPicturesFailure)
+}
+
 const onCreatePicture = (event) => {
   event.preventDefault()
   // const data = getFormFields(event.target)
@@ -51,12 +59,16 @@ const onDeletePicture = function (event) {
     .catch(ui.onDeletePictureFailure)
 }
 
+
+
+
 const addHandlers = function () {
   $('#create').on('submit', onCreatePicture)
   // $('.update-picture').on('submit', onChangePicture)
   $('.delete-picture').on('click', onDeletePicture)
   // $('.btn-update-pic').on('click', onChangePicture)
   $('.content').on('submit', '.update-picture', onChangePicture)
+  $('#btnGetMyPics').on('click', getMyPics)
 }
 
 module.exports = {

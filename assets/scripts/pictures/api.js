@@ -8,6 +8,16 @@ const getPictures = function () {
     method: 'GET'
   })
 }
+
+const getMyPictures = function (id) {
+  return $.ajax({
+    url: config.apiUrl + `/pictures/${id}`,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 // const onCreatePicture = function (data) {
 //   return $.ajax({
 //     url: config.apiUrl + '/pictures',
@@ -62,6 +72,7 @@ const onDeletePicture = function (id) {
 }
 module.exports = {
   getPictures,
+  getMyPictures,
   onCreatePicture,
   onChangePicture,
   onDeletePicture

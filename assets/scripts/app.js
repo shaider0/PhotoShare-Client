@@ -16,6 +16,7 @@ const getPictures = function () {
     .then(ui.getPicturesSuccess)
     .catch(ui.getPicturesFailure)
 }
+
 $(() => {
   getPictures()
   pictureEvents.addHandlers()
