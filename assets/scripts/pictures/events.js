@@ -2,6 +2,8 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields.js')
+const config = require('../config')
+const store = require('../store')
 
 const getPictures = function () {
   api.getPictures()
@@ -11,11 +13,23 @@ const getPictures = function () {
 
 const onCreatePicture = (event) => {
   event.preventDefault()
-  const data = getFormFields(event.target)
-  api.onCreatePicture(data)
+  // const data = getFormFields(event.target)
+  const formData = new FormData(event.target)
+  // api.onCreatePicture(data)
+  $.ajax({
+      url: config.apiUrl + '/pictures',
+      data: formData,
+      contentType: false,
+      processData: false,
+      type: 'POST',
+      headers: {
+        Authorization: 'Token token=' + store.user.token
+      }
+    })
     .then(ui.createPictureSuccess)
     .catch(ui.createPictureFailure)
 }
+
 const onChangePicture = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
