@@ -20,9 +20,6 @@ const getPictures = function () {
 // }
 // const onCreatePicture = function (data) {
 const onCreatePicture = function (data) {
-   // $('#create').on('submit', () => {
-     // event.preventDefault()
-     // const formData = new FormData(event.target)
      return $.ajax({
        url: config.apiUrl + '/pictures',
        data: data,
@@ -35,7 +32,6 @@ const onCreatePicture = function (data) {
      })
        .then(getPictures)
        .catch(console.log)
-   // })
 }
 
 
