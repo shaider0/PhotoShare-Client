@@ -59,14 +59,12 @@ const onDeletePicture = function (event) {
     .catch(ui.onDeletePictureFailure)
 }
 
-
-
-
 const addHandlers = function () {
   $('#create').on('submit', onCreatePicture)
-  $('.delete-picture').on('click', onDeletePicture)
+  // $('.delete-picture').on('click', onDeletePicture)
   $('.content').on('submit', '.update-picture', onChangePicture)
   $('#btnGetMyPics').on('click', getMyPics)
+  $('.content').on('click', '.delete-picture', onDeletePicture)
 }
 
 module.exports = {
