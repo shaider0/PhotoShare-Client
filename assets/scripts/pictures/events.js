@@ -19,9 +19,13 @@ const onCreatePicture = (event) => {
 const onChangePicture = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.onChangePicture(data)
+  const pictureId = $(event.target).data('id')
+  console.log('event.target is ', event.target)
+  api.onChangePicture(data, pictureId)
+    .then(console.log)
     .then(ui.onChangePictureSuccess)
-    .then(() => getPictures(event))
+    // .then(getPictures)
+    .then(() => getPictures())
     .catch(ui.onChangePictureFailure)
 }
 const onDeletePicture = function (event) {
@@ -29,14 +33,16 @@ const onDeletePicture = function (event) {
   const id = $(event.target).data('id')
   api.onDeletePicture(id)
     .then(ui.onDeletePictureSuccess)
-    .then(() => getPictures(event))
+    .then(() => getPictures())
     .catch(ui.onDeletePictureFailure)
 }
 
 const addHandlers = function () {
   $('#create').on('submit', onCreatePicture)
-  $('.update-picture').on('submit', onChangePicture)
-  $('.delete-picture').on('submit', onDeletePicture)
+  // $('.update-picture').on('submit', onChangePicture)
+  $('.delete-picture').on('click', onDeletePicture)
+  // $('.btn-update-pic').on('click', onChangePicture)
+  $('.content').on('submit', '.update-picture', onChangePicture)
 }
 
 module.exports = {

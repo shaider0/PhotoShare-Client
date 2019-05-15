@@ -12,7 +12,9 @@ const signUpFailure = function (data) {
 
 const signInSuccess = function (data) {
   $('form').trigger('reset')
+  console.log('data is ', data)
   store.user = data.user
+
 }
 
 const signInFailure = function (data) {

@@ -1,9 +1,40 @@
 {{#each pictures as |picture|}}
-  <section data-id="{{picture.id}}">
+  <section data-id="{{picture._id}}">
     <h3>{{picture.title}}</h3>
     <h3>{{picture.description}}</h3>
     <img src="{{picture.url}}" alt="picture" class="img-thumbnail">
-    <button type="submit" class="btn btn-danger update-picture">Update</button>
+
+    <button type="button" class="btn btn-success update" data-toggle="modal" data-target=".modal[data-id='{{picture._id}}']">
+        Update Picture
+    </button>
     <button type="submit" class="btn btn-danger delete-picture">Remove</button>
+
+    <!-- Update picture modal -->
+     <div class="modal fade update-backdrop" data-id="{{picture._id}}"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Update picture</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div class="modal-body">
+             <form data-id="{{picture._id}}" class="update-picture nav-buttons">
+               <input type="text" name="title" placeholder="Title" value="{{picture.title}}">
+               <!-- <input type="text" name="description" placeholder="Description" value="{{picture.description}}"> -->
+               <textarea rows="4" cols="50" type="text" name="description" placeholder="Description" value="{{picture.description}}"></textarea>
+               <button type="submit"  class="btn btn-success update btn-update-pic">update picture</button>
+             </form>
+             <p class="d-flex justify-content-center update-message"></p>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+             <!-- <button type="submit" class="btn btn-secondary">Sign in</button> -->
+           </div>
+         </div>
+       </div>
+     </div>
+
   </section>
 {{/each}}

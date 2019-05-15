@@ -8,24 +8,50 @@ const getPictures = function () {
     method: 'GET'
   })
 }
+// const onCreatePicture = function (data) {
+//   return $.ajax({
+//     url: config.apiUrl + '/pictures',
+//     method: 'POST',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data
+//   })
+// }
+// const onCreatePicture = function (data) {
 const onCreatePicture = function (data) {
-  return $.ajax({
-    url: config.apiUrl + '/pictures',
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data
-  })
+   // $('#create').on('submit', () => {
+     // event.preventDefault()
+     // const formData = new FormData(event.target)
+     return $.ajax({
+       url: config.apiUrl + '/pictures',
+       data: data,
+       contentType: false,
+       processData: false,
+       headers: {
+         Authorization: 'Token token=' + store.user.token
+       },
+       type: 'POST'
+     })
+       .then(getPictures)
+       .catch(console.log)
+   // })
 }
-const onChangePicture = function (data) {
+
+
+const onChangePicture = function (data, pictureId) {
   return $.ajax({
-    url: config.apiUrl + `/pictures/${data.picture.id}`,
+    url: config.apiUrl + `/pictures/${pictureId}`,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data
+    data : {
+      'picture' : {
+        'title' : data.title,
+        'description' : data.description
+      }
+    }
   })
 }
 
