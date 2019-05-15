@@ -34,7 +34,8 @@ const onCreatePicture = (event) => {
       Authorization: 'Token token=' + store.user.token
     }
   })
-    .then(ui.createPictureSuccess)
+    // .then(ui.createPictureSuccess)
+    .then(ui.onCreatePictureSuccess)
     .then(getPictures)
     .catch(ui.createPictureFailure)
 }

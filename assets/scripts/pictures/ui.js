@@ -40,8 +40,12 @@ const getPicturesFailure = function () {
 }
 
 const onCreatePictureSuccess = (data) => {
+  console.log('create Pic Success')
+  $(add'#createModal').modal('toggle')
   const getPicturesHtml = getPicturesTemplate({ pictures: data.pictures })
   $('.content').html(getPicturesHtml)
+
+
 }
 
 const onChangePictureSuccess = () => {
