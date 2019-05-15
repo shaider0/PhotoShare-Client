@@ -33,14 +33,12 @@ const onCreatePicture = (event) => {
 
 const onChangePicture = (event) => {
   event.preventDefault()
-  const data = getFormFields(event.target)
-  const pictureId = $(event.target).data('id')
-  console.log('event.target is ', event.target)
-  api.onChangePicture(data, pictureId)
-    .then(console.log)
+  const formData = getFormFields(event.target)
+  console.log('formdata is', formData)
+  formData.id = $(event.target).data('id')
+  api.onChangePicture(formData)
     .then(ui.onChangePictureSuccess)
-    // .then(getPictures)
-    .then(() => getPictures())
+    .then(getPictures)
     .catch(ui.onChangePictureFailure)
 }
 
@@ -55,9 +53,7 @@ const onDeletePicture = function (event) {
 
 const addHandlers = function () {
   $('#create').on('submit', onCreatePicture)
-  // $('.update-picture').on('submit', onChangePicture)
-  $('.content').on('click', '.delete-picture', onDeletePicture)
-  // $('.btn-update-pic').on('click', onChangePicture)
+  $('.delete-picture').on('click', onDeletePicture)
   $('.content').on('submit', '.update-picture', onChangePicture)
 }
 
