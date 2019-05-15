@@ -7,7 +7,7 @@
     <button type="button" class="btn btn-success update" data-toggle="modal" data-target=".modal[data-id='{{picture._id}}']">
         Update Picture
     </button>
-    <button type="submit" class="btn btn-danger delete-picture">Remove</button>
+    <button type="button" class="btn btn-danger delete-picture" data-id="{{picture._id}}">Delete Picture</button>
 
     <!-- Update picture modal -->
      <div class="modal fade update-backdrop" data-id="{{picture._id}}"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
