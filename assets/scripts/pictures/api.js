@@ -20,20 +20,19 @@ const getPictures = function () {
 // }
 // const onCreatePicture = function (data) {
 const onCreatePicture = function (data) {
-     return $.ajax({
-       url: config.apiUrl + '/pictures',
-       data: data,
-       contentType: false,
-       processData: false,
-       headers: {
-         Authorization: 'Token token=' + store.user.token
-       },
-       type: 'POST'
-     })
-       .then(getPictures)
-       .catch(console.log)
+  return $.ajax({
+    url: config.apiUrl + '/pictures',
+    data: data,
+    contentType: false,
+    processData: false,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    type: 'POST'
+  })
+    .then(getPictures)
+    .catch(console.log)
 }
-
 
 const onChangePicture = function (data, pictureId) {
   return $.ajax({
@@ -42,18 +41,18 @@ const onChangePicture = function (data, pictureId) {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data : {
-      'picture' : {
-        'title' : data.title,
-        'description' : data.description
+    data: {
+      'picture': {
+        'title': data.title,
+        'description': data.description
       }
     }
   })
 }
 
-const onDeletePicture = function (id) {
+const onDeletePicture = function (pictureId) {
   return $.ajax({
-    url: config.apiUrl + `/pictures/${id}`,
+    url: config.apiUrl + `/pictures/${pictureId}`,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token

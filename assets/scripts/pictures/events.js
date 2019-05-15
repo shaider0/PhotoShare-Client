@@ -17,15 +17,15 @@ const onCreatePicture = (event) => {
   const formData = new FormData(event.target)
   // api.onCreatePicture(data)
   $.ajax({
-      url: config.apiUrl + '/pictures',
-      data: formData,
-      contentType: false,
-      processData: false,
-      type: 'POST',
-      headers: {
-        Authorization: 'Token token=' + store.user.token
-      }
-    })
+    url: config.apiUrl + '/pictures',
+    data: formData,
+    contentType: false,
+    processData: false,
+    type: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
     .then(ui.createPictureSuccess)
     .catch(ui.createPictureFailure)
 }
@@ -42,10 +42,11 @@ const onChangePicture = (event) => {
     .then(() => getPictures())
     .catch(ui.onChangePictureFailure)
 }
+
 const onDeletePicture = function (event) {
   event.preventDefault()
-  const id = $(event.target).data('id')
-  api.onDeletePicture(id)
+  const pictureId = $(event.target).data('id')
+  api.onDeletePicture(pictureId)
     .then(ui.onDeletePictureSuccess)
     .then(() => getPictures())
     .catch(ui.onDeletePictureFailure)
@@ -54,7 +55,7 @@ const onDeletePicture = function (event) {
 const addHandlers = function () {
   $('#create').on('submit', onCreatePicture)
   // $('.update-picture').on('submit', onChangePicture)
-  $('.delete-picture').on('click', onDeletePicture)
+  $('.content').on('click', '.delete-picture', onDeletePicture)
   // $('.btn-update-pic').on('click', onChangePicture)
   $('.content').on('submit', '.update-picture', onChangePicture)
 }
