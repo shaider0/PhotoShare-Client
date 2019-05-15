@@ -33,6 +33,7 @@ const changePwFailure = function () {
 
 const signOutSuccess = function () {
   $('form').trigger('reset')
+  console.log('sign out succeed')
 }
 
 const signOutFailure = function () {
