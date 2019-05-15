@@ -27,6 +27,7 @@ const onCreatePicture = (event) => {
     }
   })
     .then(ui.createPictureSuccess)
+    .then(getPictures)
     .catch(ui.createPictureFailure)
 }
 
