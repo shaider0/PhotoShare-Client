@@ -20,6 +20,8 @@ const onCreatePictureSuccess = (data) => {
 }
 
 const onChangePictureSuccess = () => {
+  $('.content', '#change-picture-modal').modal('toggle')
+  $('.modal-backdrop').remove()
   console.log('Change Succeed')
 }
 

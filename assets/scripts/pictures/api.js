@@ -34,19 +34,14 @@ const onCreatePicture = function (data) {
     .catch(console.log)
 }
 
-const onChangePicture = function (data, pictureId) {
+const onChangePicture = function (formData) {
   return $.ajax({
-    url: config.apiUrl + `/pictures/${pictureId}`,
+    url: config.apiUrl + `/pictures/${formData.id}`,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: {
-      'picture': {
-        'title': data.title,
-        'description': data.description
-      }
-    }
+    data: formData
   })
 }
 
