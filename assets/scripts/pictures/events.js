@@ -14,7 +14,7 @@ const getPictures = function () {
 const getMyPics = function () {
   console.log('getMypics Called')
   // api.getMyPictures(id)
-    api.getPictures()
+  api.getPictures()
     .then(ui.getMyPicturesSuccess)
     .catch(ui.getPicturesFailure)
 }
@@ -45,6 +45,7 @@ const onChangePicture = (event) => {
   const formData = getFormFields(event.target)
   console.log('formdata is', formData)
   formData.id = $(event.target).data('id')
+  console.log('formdata.id is: ', formData.id)
   api.onChangePicture(formData)
     .then(ui.onChangePictureSuccess)
     .then(getPictures)
