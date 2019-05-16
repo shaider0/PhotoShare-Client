@@ -57,7 +57,7 @@ const onDeletePicture = function (event) {
   const pictureId = $(event.target).data('id')
   api.onDeletePicture(pictureId)
     .then(ui.onDeletePictureSuccess)
-    .then(() => getPictures())
+    .then(() => getPictures(event))
     .catch(ui.onDeletePictureFailure)
 }
 
