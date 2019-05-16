@@ -5,12 +5,13 @@
     <h3>Tag: {{picture.tag}}</h3>
     <h3>Updated at: {{picture.updatedAt}}</h3>
     <h3>Created at {{picture.createdAt}}</h3>
+    <h3>Owner: {{picture.owner.email}}</h3>
     <img src="{{picture.url}}" alt="picture" class="img-thumbnail">
 
-    <button type="button" class="btn btn-success update" data-toggle="modal" data-target=".modal[data-id='{{picture._id}}']">
+    <!-- <button type="button" class="btn btn-success update" data-toggle="modal" data-target=".modal[data-id='{{picture._id}}']">
         Update Picture
     </button>
-    <button type="button" class="btn btn-danger delete-picture" data-id="{{picture._id}}">Delete Picture</button>
+    <button type="button" class="btn btn-danger delete-picture" data-id="{{picture._id}}">Delete Picture</button> -->
 
     <!-- Update picture modal -->
 

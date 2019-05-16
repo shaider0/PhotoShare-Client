@@ -3,10 +3,12 @@
 const config = require('../config')
 const store = require('../store')
 const getPicturesTemplate = require('../templates/pictures-listing.handlebars')
+const getPicturesTemplateNoButtons = require('../templates/pictures-listing-noButtons.handlebars')
+
 
 const getPicturesSuccess = function (data) {
   console.log('shown picture to the handlebar is ', data.pictures)
-  const getPicturesHtml = getPicturesTemplate({ pictures: data.pictures })
+  const getPicturesHtml = getPicturesTemplateNoButtons({ pictures: data.pictures })
   $('.content').html(getPicturesHtml)
 }
 

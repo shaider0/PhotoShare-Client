@@ -19,7 +19,7 @@
         <a data-toggle="modal" data-target="#signInModal" href="#">Sign-in</a>
         <a data-toggle="modal" data-target="#changePasswordModal" href="#">Change Password</a>
         <a href="#" id="btnGetMyPics" >My Pictures</a>
-        <a href="#">All Pictures</a>
+        <a href="#" id="btnGetAllPics">All Pictures</a>
         <a class="sign-out" type="button" value="Sign Out" href="#">Sign Out</a>
       </nav>
     <a data-toggle="modal" data-target="#createModal" href="#">+</a>
@@ -103,7 +103,7 @@
            <div class="modal-body">
              <form id="create" enctype="multipart/form-data">
                <input required type="text" name="title" placeholder="Title">
-               <input type="text" name="description" placeholder="Description">
+               <input type="text" name="tag" placeholder="Tag">
                <input type="file" name="picture">
                <button type="submit" class="btn btn-secondary">Add Pictures</button>
              </form>

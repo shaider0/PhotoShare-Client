@@ -24,7 +24,7 @@ const onCreatePicture = (event) => {
   const metaData = getFormFields(event.target)
   const formData = new FormData(event.target)
   formData.title = metaData.title
-  formData.description = metaData.description
+  formData.tag = metaData.tag
   console.log('formdata', formData)
   $.ajax({
     url: config.apiUrl + '/pictures',
@@ -49,7 +49,7 @@ const onChangePicture = (event) => {
   console.log('formdata.id is: ', formData.id)
   api.onChangePicture(formData)
     .then(ui.onChangePictureSuccess)
-    .then(getPictures)
+    .then(getMyPics)
     .catch(ui.onChangePictureFailure)
 }
 
@@ -58,7 +58,7 @@ const onDeletePicture = function (event) {
   const pictureId = $(event.target).data('id')
   api.onDeletePicture(pictureId)
     .then(ui.onDeletePictureSuccess)
-    .then(() => getPictures(event))
+    .then(() => getMyPics(event))
     .catch(ui.onDeletePictureFailure)
 }
 
