@@ -41,13 +41,8 @@ const getPicturesFailure = function () {
 
 const onCreatePictureSuccess = (data) => {
     $('form').trigger('reset')
+    $('#createModal').modal('toggle')
   console.log('create Pic Success')
-
-  $('#createModal').modal('toggle')
-  const getPicturesHtml = getPicturesTemplate({ pictures: data.pictures })
-  $('.content').html(getPicturesHtml)
-
-
 }
 
 const onChangePictureSuccess = () => {

@@ -21,9 +21,11 @@ const getMyPics = function () {
 
 const onCreatePicture = (event) => {
   event.preventDefault()
-  // const data = getFormFields(event.target)
+  const metaData = getFormFields(event.target)
   const formData = new FormData(event.target)
-  // api.onCreatePicture(data)
+  formData.title = metaData.title
+  formData.description = metaData.description
+  console.log('formdata', formData)
   $.ajax({
     url: config.apiUrl + '/pictures',
     data: formData,
@@ -34,7 +36,6 @@ const onCreatePicture = (event) => {
       Authorization: 'Token token=' + store.user.token
     }
   })
-    // .then(ui.createPictureSuccess)
     .then(ui.onCreatePictureSuccess)
     .then(getPictures)
     .catch(ui.createPictureFailure)
