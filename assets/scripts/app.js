@@ -18,6 +18,7 @@ const getPictures = function () {
 }
 
 $(() => {
+  $('#btnGetAllPics').on('click', getPictures)
   getPictures()
   pictureEvents.addHandlers()
   authEvents.addHandlers()
