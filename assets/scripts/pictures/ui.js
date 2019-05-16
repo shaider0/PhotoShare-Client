@@ -43,7 +43,7 @@ const onCreatePictureSuccess = (data) => {
     $('form').trigger('reset')
   console.log('create Pic Success')
 
-  $(addgit '#createModal').modal('toggle')
+  $('#createModal').modal('toggle')
   const getPicturesHtml = getPicturesTemplate({ pictures: data.pictures })
   $('.content').html(getPicturesHtml)
 
