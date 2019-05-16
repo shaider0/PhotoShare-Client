@@ -52,7 +52,7 @@ const onCreatePictureSuccess = (data) => {
 
 const onChangePictureSuccess = () => {
     $('form').trigger('reset')
-  $('.content', '#change-picture-modal').modal('toggle')
+  $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
   console.log('Change Succeed')
 }
