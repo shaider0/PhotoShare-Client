@@ -19,16 +19,10 @@
         <h3>Updated at: {{picture.updatedAt}}</h3>
         <h3>Created at {{picture.createdAt}}</h3>
 
-      {{!--This button trigger the update modal --}}
-    <!-- <button type="button" class="btn btn-success update" data-toggle="modal" data-target=".modal[data-id='{{picture._id}}']">
-        Update Picture
-    </button> -->
-
     <a  data-toggle="modal" data-target=".modal[data-id='{{picture._id}}']" href="#">Update</a>
 
 
     {{!-- Delete button  --}}
-    <!-- <button type="button" class="btn btn-danger delete-picture" data-id="{{picture._id}}">Delete Picture</button> -->
     <a  class="delete-picture" data-id="{{picture._id}}" href="#">Delete</a>
 
     {{!-- Update picture metadata modal --}}
