@@ -12,7 +12,7 @@ const getPictures = function () {
 }
 
 const getMyPics = function () {
-  console.log('getMypics Called')
+  // console.log('getMypics Called')
   // api.getMyPictures(id)
   api.getPictures()
     .then(ui.getMyPicturesSuccess)
@@ -25,7 +25,7 @@ const onCreatePicture = (event) => {
   const formData = new FormData(event.target)
   formData.title = metaData.title
   formData.tag = metaData.tag
-  console.log('formdata', formData)
+  // console.log('formdata', formData)
   $.ajax({
     url: config.apiUrl + '/pictures',
     data: formData,
@@ -44,9 +44,9 @@ const onCreatePicture = (event) => {
 const onChangePicture = (event) => {
   event.preventDefault()
   const formData = getFormFields(event.target)
-  console.log('formdata is', formData)
+  // console.log('formdata is', formData)
   formData.id = $(event.target).data('id')
-  console.log('formdata.id is: ', formData.id)
+  // console.log('formdata.id is: ', formData.id)
   api.onChangePicture(formData)
     .then(ui.onChangePictureSuccess)
     .then(getMyPics)
@@ -71,5 +71,6 @@ const addHandlers = function () {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  getPictures
 }

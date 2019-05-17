@@ -1,19 +1,37 @@
 {{#each pictures as |picture|}}
-{{log picture}}
+  {{!-- {log picture}} --}}
+  <div class="grid-container">
   <section data-id="{{picture._id}}">
-    <h3>Title: {{picture.title}}</h3>
-    <h3>Tag: {{picture.tag}}</h3>
-    <h3>Updated at: {{picture.updatedAt}}</h3>
-    <h3>Created at {{picture.createdAt}}</h3>
-    <img src="{{picture.url}}" alt="picture" class="img-thumbnail">
+    <div class="grid-item">
 
-    <button type="button" class="btn btn-success update" data-toggle="modal" data-target=".modal[data-id='{{picture._id}}']">
+      {{!-- this makes the thumbnail a link that will open pic on a new tab --}}
+    <a target="_blank" href="{{picture.url}}">
+          <img src="{{picture.url}}" alt="picture" class="thumb">
+        </a>
+
+        {{!-- Picture metadata --}}
+        <h3>Title: {{picture.title}}</h3>
+        <h3>
+          {{#if picture.tag}}
+            #{{picture.tag}}
+            {{/if}}
+        </h3>
+        <h3>Updated at: {{picture.updatedAt}}</h3>
+        <h3>Created at {{picture.createdAt}}</h3>
+
+      {{!--This button trigger the update modal --}}
+    <!-- <button type="button" class="btn btn-success update" data-toggle="modal" data-target=".modal[data-id='{{picture._id}}']">
         Update Picture
-    </button>
-    <button type="button" class="btn btn-danger delete-picture" data-id="{{picture._id}}">Delete Picture</button>
+    </button> -->
 
-    <!-- Update picture modal -->
+    <a  data-toggle="modal" data-target=".modal[data-id='{{picture._id}}']" href="#">Update</a>
 
+
+    {{!-- Delete button  --}}
+    <!-- <button type="button" class="btn btn-danger delete-picture" data-id="{{picture._id}}">Delete Picture</button> -->
+    <a  class="delete-picture" data-id="{{picture._id}}" href="#">Delete</a>
+
+    {{!-- Update picture metadata modal --}}
      <div class="modal fade update-backdrop" data-id="{{picture._id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
        <div class="modal-dialog" role="document">
          <div class="modal-content">
@@ -33,6 +51,8 @@
          </div>
        </div>
      </div>
-
+   </div>
   </section>
+</div>
+
 {{/each}}

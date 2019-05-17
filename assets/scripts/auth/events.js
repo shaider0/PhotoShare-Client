@@ -3,6 +3,7 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields.js')
+const apiPictures = require('../pictures/events.js')
 
 const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
@@ -39,6 +40,7 @@ const onSignOut = function (event) {
   event.preventDefault()
   api.signOut()
     .then(ui.signOutSuccess)
+    .then(apiPictures.getPictures)
     .catch(ui.signOutFailure)
 }
 
