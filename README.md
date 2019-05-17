@@ -81,5 +81,6 @@ Wireframe: https://slack-imgs.com/?c=1&url=https%3A%2F%2Fmedia.git.generalassemb
 * 100% mobile responsive design
 * Change functionality when adding pic from "My pictures" view, now it will take you back to "All pictures" view
 * Social media sharing
-PicBucket
-May 14 2019
+
+----------
+PicBucket May 14, 2019
