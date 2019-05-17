@@ -1,39 +1,28 @@
 {{#each pictures as |picture|}}
-{{log picture}}
+  {{!-- {{log picture}} --}}
+
+  <div class-"grid-container">
   <section data-id="{{picture._id}}">
-    <h3>Title: {{picture.title}}</h3>
-    <h3>Tag: {{picture.tag}}</h3>
-    <h3>Updated at: {{picture.updatedAt}}</h3>
-    <h3>Created at {{picture.createdAt}}</h3>
-    <h3>Owner: {{picture.owner.email}}</h3>
-    <img src="{{picture.url}}" alt="picture" class="img-thumbnail">
+    <div class="grid-item">
 
-    <!-- <button type="button" class="btn btn-success update" data-toggle="modal" data-target=".modal[data-id='{{picture._id}}']">
-        Update Picture
-    </button>
-    <button type="button" class="btn btn-danger delete-picture" data-id="{{picture._id}}">Delete Picture</button> -->
+{{!-- this makes the thumbnail a link that will open pic on a new tab --}}
+    <a target="_blank" href="{{picture.url}}">
+         <img src="{{picture.url}}" alt="picture" class="thumb">
+       </a>
 
-    <!-- Update picture modal -->
-
-     <div class="modal fade update-backdrop" data-id="{{picture._id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-       <div class="modal-dialog" role="document">
-         <div class="modal-content">
-           <div class="modal-header">
-             <h5 class="modal-title" id="exampleModalLabel">Update Picture</h5>
-             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-               <span aria-hidden="true">&times;</span>
-             </button>
-           </div>
-           <div class="modal-body">
-             <form data-id="{{picture._id}}" class="update-picture">
-               <input type="text" name="picture[title]" placeholder="Tittle" value="{{picture.title}}">
-               <input type="text" name="picture[tag]" placeholder="Tag" value="{{picture.tag}}">
-               <button type="submit" class="btn btn-secondary">Update</button>
-             </form>
-           </div>
-         </div>
-       </div>
-     </div>
-
+   {{!-- Picture metadata --}}
+       <h3>Title: {{picture.title}}</h3>
+       <h3>
+         {{#if picture.tag}}
+           #{{picture.tag}}
+           {{/if}}
+       </h3>
+       <h3>By {{owner.email}}</h3>
+       <h3>Updated at: {{picture.updatedAt}}</h3>
+       <h3>Created at {{picture.createdAt}}</h3>
+       <h3>Owner: {{picture.owner.email}}</h3>
+</div>
   </section>
+</div>
+
 {{/each}}

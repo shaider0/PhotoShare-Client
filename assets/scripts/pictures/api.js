@@ -18,17 +18,7 @@ const getMyPictures = function (id) {
     }
   })
 }
-// const onCreatePicture = function (data) {
-//   return $.ajax({
-//     url: config.apiUrl + '/pictures',
-//     method: 'POST',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data
-//   })
-// }
-// const onCreatePicture = function (data) {
+
 const onCreatePicture = function (data) {
   return $.ajax({
     url: config.apiUrl + '/pictures',

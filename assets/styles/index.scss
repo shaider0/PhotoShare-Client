@@ -1,1 +1,78 @@
 @import '~bootstrap/scss/bootstrap';
+@import 'typography';
+
+.hidden {
+  display: none;
+}
+
+body {
+  background-attachment: fixed;
+  background-image: url('public/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Hammersmith One', sans-serif;
+  height: 100%;
+  }
+
+  .delete-picture {
+    color: #FF0000
+  }
+
+.thumb {
+  width: 150px;
+  border: 2px solid #ddd;
+}
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, .5);
+}
+
+.pictureFrame {
+  margin: 20px;
+}
+
+h3 {
+  font-size: 14px;
+}
+
+.product-name {
+  font-size: 40px;
+  color: $white;
+}
+
+nav {
+  background-color: #00000080;
+}
+
+.sign-in,
+.sign-up,
+.change-pwrd,
+.sign-out,
+.my-pictures,
+.all-pictures {
+  padding: 10px;
+}
+
+.grid-container {
+  background-color: #ffffff20;
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  margin: 5px;
+  padding: 10px;
+  position: relative;
+}
+
+.add-picture {
+  text-align: center;
+  font-size: 80px;
+  color: #000
+}
+
+.grid-item {
+  background-color: #FFFFFF80;
+  // border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  text-align: center;
+  display: grid;
+}
