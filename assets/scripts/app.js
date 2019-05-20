@@ -17,6 +17,13 @@ const getPictures = function () {
     .catch(ui.getPicturesFailure)
 }
 
+$('#signInModal').on('hidden.bs.modal', function () {
+  $('form').trigger('reset')
+})
+$('#signUpModal').on('hidden.bs.modal', function () {
+  $('form').trigger('reset')
+})
+
 $(() => {
   $('#btnGetAllPics').on('click', getPictures)
   getPictures()
