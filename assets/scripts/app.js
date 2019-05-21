@@ -22,6 +22,14 @@ $('#signInModal').on('hidden.bs.modal', function () {
 })
 $('#signUpModal').on('hidden.bs.modal', function () {
   $('form').trigger('reset')
+
+  $('#changePasswordModal').on('hidden.bs.modal', function () {
+    $('form').trigger('reset')
+  })
+
+  $('#createModal').on('hidden.bs.modal', function () {
+    $('form').trigger('reset')
+  })
 })
 
 $(() => {
