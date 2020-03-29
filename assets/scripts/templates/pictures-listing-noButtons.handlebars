@@ -1,20 +1,20 @@
 {{#each pictures as |picture|}}
-  <div class="post">
     <section data-id="{{picture._id}}">
-      <div>
-        <a target="_blank" href="{{picture.url}}">
-         <img src="{{picture.url}}" alt="picture" class="thumb">
-        </a>
+      <div class="post">
+        <div>
+          <a target="_blank" href="{{picture.url}}">
+           <img src="{{picture.url}}" alt="picture" class="thumb">
+          </a>
 
-         <h3><strong>{{picture.title}}</strong></h3>
-         <h3>
-           {{#if picture.tag}}
-             #{{picture.tag}}
-             {{/if}}
-         </h3>
-         <h3>Posted By {{owner.email}}</h3>
+           <h3><strong>{{picture.title}}</strong></h3>
+           <h3>
+             {{#if picture.tag}}
+               #{{picture.tag}}
+               {{/if}}
+           </h3>
+           <h3>Posted By {{owner.email}}</h3>
+        </div>
       </div>
     </section>
-  </div>
 
 {{/each}}
