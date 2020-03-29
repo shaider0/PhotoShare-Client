@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>PhotoShare</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link href="https://fonts.googleapis.com/css?family=Baloo+2|Dancing+Script|Pacifico&display=swap" rel="stylesheet">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body>
+
+      <nav>
+        <span class="product-name">PhotoShare</span>
+        <a class="sign-in float-right" data-toggle="modal" data-target="#signInModal" href="#">Sign-in</a>
+        <a class="sign-up float-right" data-toggle="modal" data-target="#signUpModal"  href="#">Sign-up</a>
+        <a class="sign-out hidden float-right" value="Sign Out" href="#">Sign Out</a>
+        <a class="change-pwrd hidden float-right" data-toggle="modal" data-target="#changePasswordModal" href="#">Change Password</a>
+        <a class="my-pictures hidden float-right" href="#" id="btnGetMyPics" >My Pictures</a>
+        <a class="all-pictures hidden float-right" href="#" id="btnGetAllPics">All Pictures</a>
+      </nav>
+
+    <div class="hidden">
+      <div class="container">
+        <button class="add" data-toggle="modal" data-target="#createModal">Add Photo</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="message"></div>
+    </div>
+
+    <div class="content"></div>
+
+     <!-- Sign up modal -->
+     <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div class="modal-body">
+             <form id="sign-up">
+               <div> <input required type="email" name="credentials[email]" placeholder="Email"></div>
+               <input required type="password" name="credentials[password]" placeholder="Password">
+               <input required type="password" name="credentials[password_confirmation]" placeholder="Password confirmation">
+               <button id="btnSignUp" type="submit" class="btn btn-secondary">Sign Up</button>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <!-- Sign in modal -->
+     <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div class="modal-body">
+             <form id="sign-in">
+               <div> <input required type="email" name="credentials[email]" placeholder="Email"></div>
+               <input required type="password" name="credentials[password]" placeholder="Password">
+               <button id="btnSignIn" type="submit" class="btn btn-secondary">Sign In</button>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <!-- Change Password modal -->
+     <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div class="modal-body">
+             <form id="change-password">
+               <input type="password" name="passwords[old]"placeholder="old password">
+               <input type="password" name="passwords[new]"placeholder="new password">
+               <button id="btnChangePassword" type="submit" class="btn btn-secondary">Change Password</button>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <!-- Upload picture modal -->
+     <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Add Pictures</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div class="modal-body">
+             <form id="create" enctype="multipart/form-data">
+               <input required type="text" name="title" placeholder="Title">
+               <input type="text" name="tag" placeholder="Tag">
+               <input required type="file" name="picture">
+               <button id="btnCreatePicture" type="submit" class="btn btn-secondary">Add Pictures</button>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+
+    </body>
+</html>
