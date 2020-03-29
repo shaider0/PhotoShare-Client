@@ -26,6 +26,7 @@ const signInSuccess = function (data) {
   $('.sign-in').hide()
   $('.sign-up').hide()
   $('.hidden').show()
+    $('.message').text('')
   $('#signInModal').modal('toggle')
   // console.log('data is ', data)
   store.user = data.user
