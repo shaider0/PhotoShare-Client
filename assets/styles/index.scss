@@ -6,30 +6,23 @@
 }
 
 body {
-  background-attachment: fixed;
-  background-image: url('public/background.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: 'Hammersmith One', sans-serif;
-  height: 100%;
+  // background-image: url('public/background.jpg');
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  background-color: #3e4a61;
+  font-family: 'Baloo 2', sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
   }
 
-  .delete-picture {
-    color: #FF0000
-  }
-
-.thumb {
-  width: 150px;
-  border: 2px solid #ddd;
+.delete-picture {
+  color: #FF0000
 }
 
 img:hover {
   box-shadow: 0 0 2px 1px rgba(0, 140, 186, .5);
-}
-
-.pictureFrame {
-  margin: 20px;
 }
 
 h3 {
@@ -39,6 +32,8 @@ h3 {
 .product-name {
   font-size: 40px;
   color: $white;
+  padding: 20px;
+  font-family: "Dancing Script"
 }
 
 nav {
@@ -51,28 +46,53 @@ nav {
 .sign-out,
 .my-pictures,
 .all-pictures {
-  padding: 10px;
-}
-
-.grid-container {
-  background-color: #ffffff20;
-  display: inline-grid;
-  grid-template-columns: auto auto auto;
-  margin: 5px;
-  padding: 10px;
-  position: relative;
-}
-
-.add-picture {
-  text-align: center;
-  font-size: 80px;
-  color: #000
-}
-
-.grid-item {
-  background-color: #FFFFFF80;
-  // border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
-  text-align: center;
+  color: white;
+}
+
+.content {
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1em;
+}
+
+@media (max-width: 700px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 20px auto;
+}
+
+.add {
+  font-size: 20px;
+  color: white;
+  background-color: #26aa36;
+  border-radius: 25px;
+  display: block;
+  padding: 5px 10px;
+  margin: 0 auto !important;
+}
+
+.add:hover {
+    background-color: rgba(255, 255, 255, 0.2 );
+}
+
+.post {
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+
+.post div {
+  padding-top: 20px;
+}
+
+.thumb {
+  width: 90%;
+  margin: 0 auto;
 }

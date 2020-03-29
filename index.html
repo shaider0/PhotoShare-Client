@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>PicBucket</title>
+      <title>PhotoShare</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Baloo+2|Dancing+Script|Pacifico&display=swap" rel="stylesheet">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -14,10 +14,8 @@
 
     <body>
 
-<!-- Navigation bar -->
-<!-- This anchor tags show modals when needed -->
       <nav>
-        <span class="product-name">PicBucket</span>
+        <span class="product-name">PhotoShare</span>
         <a class="sign-in float-right" data-toggle="modal" data-target="#signInModal" href="#">Sign-in</a>
         <a class="sign-up float-right" data-toggle="modal" data-target="#signUpModal"  href="#">Sign-up</a>
         <a class="sign-out hidden float-right" value="Sign Out" href="#">Sign Out</a>
@@ -26,13 +24,9 @@
         <a class="all-pictures hidden float-right" href="#" id="btnGetAllPics">All Pictures</a>
       </nav>
 
-      <div class="add-picture">
-    <!-- <a class="hidden" data-toggle="modal" data-target="#createModal" href="#">+</a> -->
-    <button class="hidden" id="add-picture" data-toggle="modal" data-target="#createModal">+</button>
-  </div>
-
-<!-- Tag for user notifications and container for handlebars template -->
-    <p class="d-flex justify-content-center message"></p>
+    <div class="container">
+      <button class="add" data-toggle="modal" data-target="#createModal">Add Photo</button>
+    </div>
     <div class="content"></div>
 
      <!-- Sign up modal -->
