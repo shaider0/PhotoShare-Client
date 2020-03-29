@@ -1,0 +1,45 @@
+{{#each pictures as |picture|}}
+
+  <section data-id="{{picture._id}}">
+    <div class="post">
+    <a target="_blank" href="{{picture.url}}">
+          <img src="{{picture.url}}" alt="picture" class="thumb">
+        </a>
+
+        {{!-- Picture metadata --}}
+        <h3><strong>{{picture.title}}</strong></h3>
+        <h3>
+          {{#if picture.tag}}
+            #{{picture.tag}}
+            {{/if}}
+        </h3>
+
+    <a  data-toggle="modal" data-target=".modal[data-id='{{picture._id}}']" href="#">Update</a>
+
+    {{!-- Delete button  --}}
+    <a  class="delete-picture" data-id="{{picture._id}}" href="#">Delete</a>
+
+    {{!-- Update picture metadata modal --}}
+     <div class="modal fade update-backdrop" data-id="{{picture._id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Update Picture</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div class="modal-body">
+             <form data-id="{{picture._id}}" class="update-picture">
+               <input type="text" name="picture[title]" placeholder="Tittle" value="{{picture.title}}">
+               <input type="text" name="picture[tag]" placeholder="Tag" value="{{picture.tag}}">
+               <button type="submit" class="btn btn-secondary">Update</button>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+  </section>
+
+{{/each}}
