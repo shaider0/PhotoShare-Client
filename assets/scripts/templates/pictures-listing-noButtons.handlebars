@@ -1,27 +1,20 @@
 {{#each pictures as |picture|}}
-  {{!-- {{log picture}} --}}
-
-  <div class="grid-container">
-  <section data-id="{{picture._id}}">
-    <div class="grid-item">
-
-{{!-- this makes the thumbnail a link that will open pic on a new tab --}}
-    <a target="_blank" href="{{picture.url}}">
+  <div class="post">
+    <section data-id="{{picture._id}}">
+      <div>
+        <a target="_blank" href="{{picture.url}}">
          <img src="{{picture.url}}" alt="picture" class="thumb">
-       </a>
+        </a>
 
-   {{!-- Picture metadata --}}
-       <h3>Title: {{picture.title}}</h3>
-       <h3>
-         {{#if picture.tag}}
-           #{{picture.tag}}
-           {{/if}}
-       </h3>
-       <h3>By {{owner.email}}</h3>
-       <h3>Updated at: {{picture.updatedAt}}</h3>
-       <h3>Created at {{picture.createdAt}}</h3>
-</div>
-  </section>
-</div>
+         <h3><strong>{{picture.title}}</strong></h3>
+         <h3>
+           {{#if picture.tag}}
+             #{{picture.tag}}
+             {{/if}}
+         </h3>
+         <h3>Posted By {{owner.email}}</h3>
+      </div>
+    </section>
+  </div>
 
 {{/each}}

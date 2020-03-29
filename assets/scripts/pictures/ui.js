@@ -7,20 +7,15 @@ const getPicturesTemplateNoButtons = require('../templates/pictures-listing-noBu
 const timingDelay = 1500
 
 const getPicturesSuccess = function (data) {
-  // console.log('shown picture to the handlebar is ', data.pictures)
   const getPicturesHtml = getPicturesTemplateNoButtons({ pictures: data.pictures })
   $('.content').html(getPicturesHtml)
 }
 
 const getMyPicturesSuccess = function (data) {
-  // console.log('ui.getMyPicturesSuccess data is ', data.pictures[8].owner._id)
   const myPicArray = []
   data.pictures.forEach(function (element) {
-    // console.log('Element id is ', element.owner._id )
     $('.content').empty()
     if (element.owner._id === store.user._id) {
-      // console.log('yayykss! Store.user.id and owner.id matches!!')
-      // console.log(element)
       myPicArray.push(element)
     }
   })
